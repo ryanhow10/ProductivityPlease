@@ -4,7 +4,7 @@ const router = express.Router();
 
 //Get all tasks
 router.get("/", (req, res) => {
-    Task.find((err, data) => {
+    Task.find({status: "active"}, (err, data) => {
         if(!err){
             res.json(data);
         } else{
