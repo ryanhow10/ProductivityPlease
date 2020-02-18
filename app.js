@@ -5,6 +5,8 @@ const tasks = require("./routes/tasks");
 require("dotenv/config");
 const app = express();
 
+app.use(bodyParser());
+
 app.use("/tasks", tasks);
 
 db.connect(process.env.DB_CONNECTION, {useNewUrlParser: true}, () => {

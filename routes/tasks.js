@@ -25,6 +25,19 @@ router.get("/:taskId", (req, res) => {
 });
 
 //Add task
+router.post("/", (req, res) => {
+    let task = new Task({
+        title: req.body.title,
+        description: req.body.description
+    });
+    task.save()
+        .then(data => {
+            res.json(data);
+        })
+        .catch(err => {
+            res.send(err);
+        });
+});
 
 //"Delete" task - set status to non-active
 
