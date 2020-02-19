@@ -13,6 +13,11 @@ const task = db.Schema({
         type: Date,
         default: Date.now()
     },
+    completed: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
     status: {
         type: String,
         default: "active"
