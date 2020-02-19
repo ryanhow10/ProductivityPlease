@@ -39,6 +39,17 @@ router.post("/", (req, res) => {
         });
 });
 
+//Update task (title and/or description)
+router.put("/:postId/edit", (req, res) => {
+    Task.findByIdAndUpdate(req.params.postId, {title: req.body.title, description: req.body.description}, (err, data) => {
+        if(!err){
+            res.json(data);
+        } else{
+            res.send(err);
+        }
+    });
+});
+
 //Update task completion to true
 router.put("/:postId", (req, res) => {
     Task.findByIdAndUpdate(req.params.postId, {completed: true}, (err, data) => {
