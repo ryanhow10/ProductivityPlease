@@ -39,6 +39,17 @@ router.post("/", (req, res) => {
         });
 });
 
+//Update task completion to true
+router.put("/:postId", (req, res) => {
+    Task.findByIdAndUpdate(req.params.postId, {completed: true}, (err, data) => {
+        if(!err){
+            res.json(data);
+        } else{
+            res.send(err);
+        }
+    });
+});
+
 //"Delete" task - set status to non-active
 router.delete("/:postId", (req, res) => {
     Task.findByIdAndUpdate(req.params.postId, {status: "non-active"}, (err, data) => {
