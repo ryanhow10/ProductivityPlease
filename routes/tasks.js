@@ -51,8 +51,8 @@ router.put("/:postId/edit", (req, res) => {
 });
 
 //Update task completion to true
-router.put("/:postId", (req, res) => {
-    Task.findByIdAndUpdate(req.params.postId, {completed: true}, (err, data) => {
+router.put("/:postId/:completed", (req, res) => {
+    Task.findByIdAndUpdate(req.params.postId, {completed: req.params.completed}, (err, data) => {
         if(!err){
             res.json(data);
         } else{
