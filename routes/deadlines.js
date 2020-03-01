@@ -37,6 +37,14 @@ router.post("/", async (req, res) => {
 });
 
 //Update deadline details
+router.put("/:deadlineId/edit", async (req, res) => {
+    try{
+        let updatedDeadline = await Deadline.findByIdAndUpdate(req.params.deadlineId, {date: req.body.date, description: req.body.description});
+        res.json(updatedDeadline);
+    } catch(err){
+        res.send({message: "Failed to update deadline", error: err});
+    }
+});
 
 //Delete deadline
 
