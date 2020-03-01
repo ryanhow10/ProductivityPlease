@@ -2,7 +2,7 @@ const express = require("express");
 const Task = require("./../models/Task");
 const router = express.Router();
 
-//Get all tasks
+//Get all active tasks
 router.get("/", async (req, res) => {
     try{
         let tasks = await Task.find({status: "active"});
