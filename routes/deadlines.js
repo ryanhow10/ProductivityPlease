@@ -47,5 +47,13 @@ router.put("/:deadlineId/edit", async (req, res) => {
 });
 
 //Delete deadline
+router.delete("/:deadlineId", async (req, res) => {
+    try{
+        let deletedDeadline = await Deadline.findByIdAndUpdate(req.params.deadlineId, {status: "non-active"});
+        res.json(deletedDeadline);
+    } catch(err){
+        res.send({message: "Failed to delete deadline", error: err});
+    }
+});
 
 module.exports = router;
