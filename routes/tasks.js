@@ -26,7 +26,8 @@ router.get("/:taskId", async (req, res) => {
 router.post("/", async (req, res) => {
     let task = new Task({
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
+        colour: req.body.colour
     });
     try{
         let newTask = await task.save();

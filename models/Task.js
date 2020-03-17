@@ -22,6 +22,10 @@ const task = db.Schema({
         type: String,
         default: "active",
         required: true
+    },
+    colour: {
+        type: String,
+        required: true
     }
 });
 
