@@ -26,7 +26,8 @@ router.get("/:deadlineId", async (req, res) => {
 router.post("/", async (req, res) => {
     const deadline = new Deadline({
         date: req.body.date,
-        description: req.body.description
+        description: req.body.description,
+        colour: req.body.colour
     });
     try{
         let newDeadline = await deadline.save();
