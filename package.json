@@ -17,6 +17,8 @@
     "mongoose": "^5.9.1",
     "nodemon": "^2.0.2",
     "vue-click": "^1.5.0",
-    "vue-overflow-scroll": "^1.1.4"
+    "vue-overflow-scroll": "^1.1.4",
+    "vue-skycons": "^1.0.5",
+    "vue-weather-widget": "^2.4.0"
   }
 }
