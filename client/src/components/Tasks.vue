@@ -130,11 +130,11 @@ export default {
             })
                 .then(resp => {
                     console.log("Successfully updated task. " + resp.data);
+                    this.getTasks();
                 })
                 .catch(err => { 
                     console.log("Failed to update task. " + err);
                 });
-            this.getTasks();
             this.$bvModal.hide('editIndividualTask');
         },
         cancelTaskEdit: function() {

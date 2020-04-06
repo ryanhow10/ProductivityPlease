@@ -71,6 +71,10 @@ export default {
   background: #f9e4b7;
 }
 
+.container {
+  min-height: 100% !important;
+}
+
 .bordered {
   border-top: 0.05em solid #2c3e50;
 }
